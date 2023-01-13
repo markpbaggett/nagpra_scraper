@@ -10,6 +10,7 @@ packages = [{include = "scrape_questionable_content"}]
 python = "^3.11"
 requestium = "^0.1.15"
 tqdm = "^4.64.1"
+argparse = "^1.4.0"
 
 
 [build-system]

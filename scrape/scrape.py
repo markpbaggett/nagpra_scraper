@@ -1,6 +1,7 @@
 from requestium import Session, Keys
 import tqdm
 import os
+import argparse
 
 
 class IslandoraReviewer:
@@ -51,8 +52,11 @@ class IslandoraReviewer:
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Build a batch of screenshots.')
+    parser.add_argument("-b", "--batch", dest="batch", help="Specify batch.")
+    args = parser.parse_args()
     for_review = []
-    with open('batches/batch_0.txt', 'r') as current_batch:
+    with open(args.batch, 'r') as current_batch:
         for line in current_batch:
             for_review.append(line.strip())
     x = IslandoraReviewer(for_review)
